@@ -13,7 +13,7 @@
 ✉️ &nbsp;You can shoot me an email at [edgar.adrian97@gmail.com](mailto:edgar.adrian97@gmail.com)! I'll try to respond as soon as I can.\
 📄 &nbsp;Please have a look at my [Résumé](https://www.adrianromo.me/resume.html) for more details about me. I'm open to feedback and suggestions!
 
-<img alt="Night Coding" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" width="300px" align="right"/>
+<img alt="Night Coding" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" width="250px" align="right"/>
 
 ### 🛠 &nbsp;Tech Stack
 
