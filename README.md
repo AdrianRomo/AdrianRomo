@@ -6,12 +6,12 @@
 ### 👨🏻‍💻 &nbsp;About Me
 
 💡 &nbsp;I like to explore new technologies and develop software solutions and quick hacks.\
-🎓 &nbsp;I'm currently studying Computer Science at National Polytechnic Institute, Mexico.\
+🎓 &nbsp;Have a BSc in Computer Science at National Polytechnic Institute, Mexico.\
 🌱 &nbsp;I'm on track for learning more about Artificial Intelligence, Systems Design, and Data Science.\
 ✍️ &nbsp;In my free time, I pursue Graphic Design and Blog Writing as hobbies/side hustles.\
 💬 &nbsp;Feel free to reach out to me for pro bono consulting and volunteering, or just for some interesting discussion.\
 ✉️ &nbsp;You can shoot me an email at [edgar.adrian97@gmail.com](mailto:edgar.adrian97@gmail.com)! I'll try to respond as soon as I can.\
-📄 &nbsp;Please have a look at my [Résumé](https://www.adrianromo.me/resume.html) for more details about me. I'm open to feedback and suggestions!
+📄 &nbsp;Please have a look at my [Résumé](https://www.adrianromo.me/resume) for more details about me. I'm open to feedback and suggestions!
 
 <img alt="Night Coding" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" width="250px" align="right"/>
 
