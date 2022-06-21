@@ -1,7 +1,7 @@
 
 <!--![Adrian Romo Banner]-->
 
-## <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"> &nbsp;Hey there! I'm Adrian!
+## &nbsp;Hey there! I'm Adrian!
 
 ### 👨🏻‍💻 &nbsp;About Me
 
