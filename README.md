@@ -1,145 +1,88 @@
 # Adrian Romo
 
-**Senior Backend Engineer focused on platform systems, AI-enabled products, voice automation, and reliable backend architecture.**
+Senior backend engineer in Mexico City (UTC-6). 9+ years in Python.
 
-I build backend systems that connect people, workflows, and infrastructure — from omnichannel chat integrations to voice agents, automation platforms, and production-grade APIs.
+I build the layer between a product and everything it has to talk to: chat platforms, phone lines, speech models, LLMs, and the infrastructure underneath. Lately that means voice agents and agent tooling.
 
-Currently focused on:
+I work in English and Spanish, and I'm open to senior backend, platform and voice AI roles, remote.
 
-- Backend architecture with Python, Django, Flask, FastAPI, and PostgreSQL
-- AI product integrations, RAG systems, and voice/chat automation
-- AWS-based systems using Lambda, Lex, Connect, and event-driven workflows
-- Developer experience, maintainability, system design, and operational reliability
-- Building technical products that are simple, useful, and durable
+[Website](https://adrianromo.me) · [Case studies](https://adrianromo.me/projects) · [Blog](https://adrianromo.me/blog) · [Resume](https://adrianromo.me/resume) · [LinkedIn](https://www.linkedin.com/in/adrianromo97)
 
 ---
 
-## Engineering focus
+## Work I'm proud of
 
-I care about systems that are easy to reason about, safe to extend, and reliable under real-world conditions.
+### Four chat channels and a phone line behind one interface · Resolve Systems
 
-| Area | What I work on |
-|---|---|
-| Backend Systems | APIs, service boundaries, database modeling, async workflows, integrations |
-| AI & Automation | Voice agents, chatbots, RAG assistants, workflow automation, LLM-backed products |
-| Cloud & Infrastructure | AWS Lambda, Amazon Connect, Lex, Docker, Traefik, Proxmox, observability |
-| Platform Integrations | Slack, Microsoft Teams, Google Chat, Webex, IVR, CRM and internal systems |
-| Product Engineering | Turning ambiguous ideas into maintainable, user-facing technical solutions |
+[Case study](https://adrianromo.me/projects/omni-router)
 
----
+I designed the Factory Method integration layer our virtual support agent runs on. Slack, Microsoft Teams, Google Chat and Webex sit behind one interface, and that interface says nothing about when a reply arrives. So when we needed a phone line, a blocking call became one more adapter.
 
-## Selected work
+I moved the existing integrations onto it while they kept running in production, and each new chat channel turned into a quick plug-in. The customer-facing APIs on top held at **zero critical vulnerabilities for 2 years**.
 
-### Voice and chatbot platforms
+### Voice agents · Resolve Systems
 
-Designed and implemented backend integrations for AI-powered conversational systems across chat and voice channels.
+[Case study](https://adrianromo.me/projects/voice-orchestrator)
 
-- Built IVR voice-agent integrations using **Amazon Connect**, **Amazon Lex**, **AWS Lambda**, and backend APIs
-- Connected asynchronous chatbot flows to phone-based conversations using speech-to-text and text-to-speech workflows
-- Worked on omnichannel integrations across **Microsoft Teams**, **Slack**, **Google Chat**, and **Webex**
-- Improved extensibility using reusable integration patterns and cleaner service boundaries
+I designed and built the original IVR agent on Amazon Connect, Lex, Lambda and Polly. The async chatbot backend was shared production infrastructure, so forking it for voice was off the table. I bridged the call into it.
 
-### Portfolio AI assistant
+I led the voice integration, including the provider and cost decisions. Later the channel moved to a Vapi agent and fulfillment logic didn't change at all. The platform as a whole helped cut help-desk call volume by **40-60%**.
 
-Building a personal AI assistant for my portfolio that can answer questions about my work, projects, resume, and experience.
+### Realtime voice agent · personal
 
-- RAG-based retrieval over structured portfolio content
-- Next.js application architecture
-- Source-aware responses
-- Contact and scheduling flows
-- Designed for recruiter and hiring-manager interaction
+A Pipecat pipeline (streaming speech-to-text, LLM, speech synthesis) with Silero VAD, semantic turn endpointing, barge-in, and per-utterance language detection, so it answers in the language you spoke.
 
-### Home lab and infrastructure
+Splitting latency by stage showed turn detection is the critical path. And a tool-grounded turn costs a second model round trip (0.64s vs 0.17s to first token), while the tool itself runs in 0.04s.
 
-I use my home lab to experiment with production-like infrastructure patterns.
+### Agent tooling for my homelab · personal
 
-- Proxmox, Docker, Traefik, Cloudflare, Pi-hole, Unbound, Synology NAS
-- Media automation, service routing, DNS, reverse proxies, backups, and monitoring
-- Practical infrastructure experiments focused on reliability and maintainability
+[Ops case study](https://adrianromo.me/projects/homelab-ops) · [Second Brain case study](https://adrianromo.me/projects/homelab-second-brain)
 
----
+- An MCP server with 90+ read-only tools over live infrastructure. Read-only is enforced in the tool schemas, a container socket proxy that rejects writes, and argument filtering below the model.
+- A write loop: detect, propose, human approve, act. Approved work lands as a draft pull request, and conclusions without evidence get blocked.
+- A compiled memory layer for local models: **~99% fewer tokens per query** (30-50K down to 2-5K), validated in shadow mode against the old RAG path before it took over. Answers carry citations.
+- Built with Claude Code and Codex as coding agents while I own architecture, review, security and testing: 308 merged PRs from June to November 2026. It runs every day across 11 hosts and 176 containers.
 
-## Technical stack
+### Smaller things
 
-**Languages**
+- [Influencer-Automation](https://github.com/AdrianRomo/Influencer-Automation): turns RSS news into audio and video with the ElevenLabs and OpenAI APIs.
+- [Grocery Cart Bridge](https://adrianromo.me/projects/grocery-cart-bridge): turns a meal-planner list into a cart proposal for a human to review, and stops before buying anything. Python, MCP, pytest.
+- [This portfolio](https://adrianromo.me/projects/this-portfolio): multilingual Next.js site with a retrieval assistant (pgvector, OpenAI), a translation pipeline, and a generated PDF resume.
+- [Short-form video pipeline](https://adrianromo.me/projects/short-form-video-pipeline): my deployment of an open-source video generator, with about 57 commits of my own on top of upstream. Runs on CUDA at home and CPU-only as a public demo.
 
-`Python` · `TypeScript` · `JavaScript` · `SQL`
-
-**Backend**
-
-`Django` · `Flask` · `FastAPI` · `Celery` · `REST APIs` · `PostgreSQL` · `Redis`
-
-**Cloud and infrastructure**
-
-`AWS Lambda` · `Amazon Connect` · `Amazon Lex` · `Docker` · `Traefik` · `Cloudflare` · `Linux`
-
-**Frontend and product**
-
-`Next.js` · `React` · `Tailwind CSS` · `Prisma`
-
-**Engineering practices**
-
-`System Design` · `API Design` · `Database Design` · `Async Processing` · `Observability` · `Technical Writing`
+Most of my professional work lives in private repos. The case studies are the long version.
 
 ---
 
-## What I value as an engineer
+## Writing
 
-- Clear abstractions over clever code
-- Boring, reliable systems where they matter
-- Strong ownership from idea to production
-- Documentation that makes future work easier
-- Product thinking, not just ticket execution
-- Calm debugging, careful tradeoffs, and long-term maintainability
-
----
-
-## Current interests
-
-I am currently exploring:
-
-- AI-native product experiences
-- Voice agents and conversational interfaces
-- RAG systems for personal and business workflows
-- Backend architecture for small, high-leverage products
-- Developer tools and automation
-- Building a stronger public engineering portfolio
+- [Building Voice Integrations on Top of Async Chatbots](https://adrianromo.me/blog/voice-integrations-on-top-of-async-chatbots)
+- [Assembled Primitives vs. a Platform](https://adrianromo.me/blog/assembled-primitives-vs-a-platform): why the voice channel moved from AWS primitives to Vapi
+- [What I Learned Designing Omnichannel Backend Integrations](https://adrianromo.me/blog/omnichannel-backend-integrations-lessons)
+- [A Write Loop That Never Merges Anything](https://adrianromo.me/blog/gated-write-loop)
+- [A Second Brain That Refuses to Guess](https://adrianromo.me/blog/compiled-memory-layer-for-local-models)
+- [The Alert That Named a Thing and Called It Evidence](https://adrianromo.me/blog/evidence-vs-naming)
 
 ---
 
-## Writing and projects
+## How I work
 
-I write about backend engineering, AI products, infrastructure experiments, and career growth.
-
-- Website: [adrianromo.me](https://www.adrianromo.me)
-- Resume: [adrianromo.me/resume](https://www.adrianromo.me/resume)
-- Projects: [adrianromo.me/projects](https://www.adrianromo.me/projects)
-- Blog: [adrianromo.me/blog](https://www.adrianromo.me/blog)
+- I design the seam first, so the later migration is cheap. Our voice channel went from an IVR to Vapi and fulfillment never noticed.
+- I put safety in the structure: schemas, proxies and filters below the model.
+- I write it down. Case studies, ADRs, runbooks and postmortems are how I hand work off.
 
 ---
 
-## GitHub
+## Stack
 
-Most of my professional work lives in private repositories, but this GitHub profile is where I publish experiments, portfolio projects, infrastructure notes, and product ideas.
+**Backend:** Python, Django (7+ years), FastAPI, Flask, Celery, REST APIs, Postgres, Redis
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=AdrianRomo&show_icons=true&hide_title=true&hide_border=true&include_all_commits=true&count_private=true&theme=transparent" alt="GitHub stats" />
-</p>
+**Voice & AI:** Pipecat, Vapi, Amazon Connect, Lex, Polly, Deepgram, Whisper, MCP, Qdrant, pgvector, Ollama, Claude Code, Codex
 
----
+**Cloud & infra:** AWS Lambda, S3, IAM, Docker, Kubernetes, Terraform, Traefik, Prometheus, Grafana, Loki, Proxmox
 
-## Contact
-
-I am open to conversations about backend engineering, AI products, platform architecture, and senior/staff-level engineering opportunities.
-
-- Website: [adrianromo.me](https://www.adrianromo.me)
-- LinkedIn: [linkedin.com/in/AdrianRomo97](https://linkedin.com/in/AdrianRomo97)
-- Email: [adrian.romo.dev@gmail.com](mailto:adrian.romo.dev@gmail.com)
+**Frontend (this portfolio):** Next.js, TypeScript, Tailwind, Prisma
 
 ---
 
-<p align="left">
-  <sub>
-    Backend systems. Voice platforms. AI products. Infrastructure that holds.
-  </sub>
-</p>
+**Get in touch:** [adrian.romo.dev@gmail.com](mailto:adrian.romo.dev@gmail.com) · [LinkedIn](https://www.linkedin.com/in/adrianromo97) · [adrianromo.me](https://adrianromo.me)
